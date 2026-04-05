@@ -18,6 +18,7 @@ define( 'CTIB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CTIB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 // 1. Include Core Architecture & Database Files
+require_once CTIB_PLUGIN_DIR . 'includes/class-ctib-frontend.php';
 require_once CTIB_PLUGIN_DIR . 'includes/class-ctib-activator.php';
 require_once CTIB_PLUGIN_DIR . 'includes/class-ctib-deactivator.php';
 require_once CTIB_PLUGIN_DIR . 'includes/class-ctib-cpt.php';
@@ -44,6 +45,7 @@ add_action( 'init', array( 'CTIB_Admin_UI', 'init' ) );
 add_action( 'init', array( 'CTIB_Frontend_Manager', 'init' ) );
 add_action( 'init', array( 'CTIB_Cloner', 'init' ) );
 add_action( 'init', array( 'CTIB_Versioning', 'init' ) );
+add_action( 'init', array( 'CTIB_Frontend', 'init' ) );
 
 // Enqueue Admin Scripts & Styles
 function ctib_enqueue_admin_assets( $hook ) {
