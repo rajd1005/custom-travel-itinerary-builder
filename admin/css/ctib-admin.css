@@ -1,0 +1,10 @@
+.ctib-day-box { background: #fff; border: 1px solid #ccd0d4; margin-bottom: 15px; border-radius: 4px; box-shadow: 0 1px 1px rgba(0,0,0,.04); }
+.ctib-day-header { padding: 10px; background: #f6f7f7; border-bottom: 1px solid #ccd0d4; cursor: default; display: flex; align-items: center; }
+.drag-handle { cursor: move; color: #a7aaad; margin-right: 10px; }
+.ctib-remove-day { margin-left: auto; background: none; border: none; color: #d63638; cursor: pointer; font-size: 20px; }
+.ctib-day-body { padding: 15px; }
+.ctib-row-split { display: flex; gap: 20px; margin-top: 15px; }
+.ctib-col { flex: 1; }
+.ctib-meals { margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px; }
+.ctib-meals label { margin-right: 15px; font-weight: 600; }
+.ui-state-highlight { height: 150px; background: #f0f6fb; border: 2px dashed #2271b1; margin-bottom: 15px; }

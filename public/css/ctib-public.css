@@ -1,0 +1,101 @@
+/* Core Variables & Reset */
+:root {
+    --ctib-primary: #0073aa;
+    --ctib-secondary: #f0f6fb;
+    --ctib-text: #333333;
+    --ctib-whatsapp: #25D366;
+    --ctib-border: #e2e8f0;
+}
+
+.ctib-web-view-container {
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ctib-text);
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    line-height: 1.6;
+}
+
+/* Header */
+.ctib-quote-header {
+    background: var(--ctib-primary);
+    color: #ffffff;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+}
+.ctib-quote-header h1 {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 28px;
+}
+.ctib-meta { font-size: 16px; opacity: 0.9; margin: 0; }
+.ctib-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sections */
+.ctib-section { padding: 40px; border-bottom: 1px solid var(--ctib-border); }
+.ctib-section h2 { color: var(--ctib-primary); font-size: 22px; margin-top: 0; margin-bottom: 25px; border-bottom: 2px solid var(--ctib-secondary); padding-bottom: 10px; }
+
+/* Timeline (Day Builder) */
+.ctib-day-card { display: flex; gap: 20px; margin-bottom: 30px; }
+.ctib-day-number { font-weight: bold; color: var(--ctib-primary); flex-shrink: 0; width: 60px; }
+.ctib-day-content { flex-grow: 1; background: var(--ctib-secondary); padding: 20px; border-radius: 8px; }
+.ctib-day-content h3 { margin-top: 0; font-size: 18px; color: #222; }
+.ctib-day-meta { margin-top: 15px; font-size: 14px; color: #555; display: flex; gap: 20px; flex-wrap: wrap; }
+.ctib-dynamic-img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 6px; margin-top: 15px; }
+
+/* Inclusions & Terms */
+.ctib-terms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.ctib-check-list { list-style: none; padding: 0; margin: 0; }
+.ctib-check-list li { position: relative; padding-left: 25px; margin-bottom: 8px; }
+.ctib-check-list li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
+.ctib-exclusions-box { background: #fff3f3; padding: 15px; border-radius: 6px; border-left: 4px solid #f44336; font-size: 14px; }
+
+/* Pricing Table */
+.ctib-price-table { width: 100%; border-collapse: collapse; }
+.ctib-price-table td, .ctib-price-table th { padding: 12px 0; border-bottom: 1px solid var(--ctib-border); }
+.ctib-text-right { text-align: right; }
+.ctib-subtotal-row { background: #f9fafb; }
+.ctib-subtotal-row td { padding: 12px; }
+.ctib-discount-row { color: #d32f2f; }
+.ctib-price-table tfoot th { font-size: 20px; padding-top: 20px; border-bottom: none; }
+.ctib-grand-total { color: var(--ctib-primary); }
+
+/* Action Bar (Communication Options) */
+.ctib-action-bar { padding: 30px 40px; background: #f8fafc; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+.ctib-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 6px; font-weight: bold; text-decoration: none !important; border: none; cursor: pointer; font-size: 15px; transition: opacity 0.3s; }
+.ctib-btn:hover { opacity: 0.9; color: #fff; }
+.ctib-btn-whatsapp { background: var(--ctib-whatsapp); color: #fff; }
+.ctib-btn-email { background: #546e7a; color: #fff; }
+.ctib-btn-pdf { background: var(--ctib-primary); color: #fff; }
+
+/* PDF Generation (Print Stylesheet) */
+@media print {
+    body * { visibility: hidden; }
+    .ctib-web-view-container, .ctib-web-view-container * { visibility: visible; }
+    .ctib-web-view-container { position: absolute; left: 0; top: 0; width: 100%; margin: 0; box-shadow: none; border-radius: 0; }
+    .no-print { display: none !important; }
+    .ctib-day-card { page-break-inside: avoid; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .ctib-terms-grid { grid-template-columns: 1fr; }
+    .ctib-day-card { flex-direction: column; gap: 10px; }
+    .ctib-action-bar { flex-direction: column; }
+    .ctib-btn { width: 100%; justify-content: center; }
+}
